@@ -14,3 +14,4 @@ print('El resultado de la suma es: ',numero1 + numero2,' numero entero')
 
 # Con las f-string: lo mismo se escribe:
 print(f'El resultado de la suma de {numero1} + {numero2} = {numero1+numero2}')
+
