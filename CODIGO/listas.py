@@ -54,5 +54,13 @@ L.append(10)
 print(L)
 
 # Añadir 5 números por teclado a una lista:
-L = []
+L = [] # L = list()
+for i in range(5):
+    numero = int(input("Inserte un número entero por favor: "))
+    L.append(numero)
+print(L)
+
+s = "hola que tal"
+L2 = list(s)
+print(L2)
 
