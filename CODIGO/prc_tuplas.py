@@ -9,7 +9,7 @@ t = fichero.partition('.')
 print(t)
 print('La extensión del fichero es: ', t[2])
 
-archivos = os.listdir('../doc')
+archivos = os.listdir(r'C:\Users\ANGELA\Desktop\Python_Django4\python\CODIGO')
 extensiones = ('txt','py','pdf')
 for f in archivos:
     t = f.partition('.')
