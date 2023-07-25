@@ -28,3 +28,30 @@ print(d)
 alumno = {"nombre":"Miguel","asignatura":"Excel", "notas":[7.8,4.5,9.9,3]}
 # imprimir la ultima:
 print(alumno["notas"][-1])
+
+d = {"nombre":"Alberto","edad":45,"altura":1.78}
+for k,v in d.items():
+    print(k,v, end='\t')
+print()
+
+# listas dentro de diccionarios:
+d = {"nombre":"Pedro", "notas":[2,6,7,8,10]}
+for k,v in d.items():
+    if type(v) == list:
+        print("Nota media: ", sum(v) / len(v))
+    else:
+        print(v)
+
+# listas con diccionarios:
+L = [{"nombre":"Pedro", "notas":[2,6,7,8,10]},
+     {"nombre":"Ana", "notas":[6,6.7,7.1,8,5]},
+     {"nombre":"Miguel", "notas":[1,6,7.7,8,6]}]
+
+for d in L:
+    print(d['nombre'],sum(d['notas'])/len(d['notas']))
+
+#print(len([2,6,7,8,10]))
+
+
+
+
