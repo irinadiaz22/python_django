@@ -15,10 +15,15 @@ importe:> 230
 numero = 1
 intentos = []
 while numero % 10 != 0:
-    numero = int(input('importe:> '))
-    if numero % 10 != 0:
-        intentos.append(numero)
-        print('teclear un número múltiplo de 10')
+    cad = input('importe:> ')
+    if cad.isnumeric():
+        numero = int(cad)
+        if numero % 10 != 0:
+            intentos.append(numero)
+            print('teclear un número múltiplo de 10')
+    else:
+        print('Teclear solo números múltiplo de 10')
+        intentos.append(cad)
 
 # El numero es válido  
 print(numero,' ok!')
@@ -31,7 +36,10 @@ for b in tipos_billetes:
     if numero >= b:
         numBilletes = numero // b
         billetes[b] = numBilletes
-        numero %= b   
+        numero %= b 
+
+    if numero == 0: break
+
 
 # Imprimir el resultado:
 for b, cuenta in billetes.items():
