@@ -23,6 +23,13 @@ class Persona():
         else:
             print(self.nombre,'y',otro.nombre,'están hablando')
 
+    def __lt__(self, otro):
+        return self.edad < otro.edad
+    
+    def __eq__(self, otro):
+        return self.nombre == otro.nombre and \
+        self.edad == otro.edad and self.altura == otro.altura
+
     def __str__(self):
         return self.nombre + " " + str(self.edad) + " " + str(self.altura)
     
@@ -46,6 +53,12 @@ class Guia(Persona):
         return Persona.__str__(self)+ " "+self.ambito + " " + \
         ",".join(self.idiomas)
     
+    def __eq__(self, otro):
+        self.idiomas.sort()
+        otro.idiomas.sort()
+        return super().__eq__(otro) and self.ambito == otro.ambito \
+        and self.idiomas == otro.idiomas
+    
     def hablar(self, otro=None):
         if not otro:
             print(self.nombre,'habla solo')
@@ -62,11 +75,17 @@ class Guia(Persona):
 def testGuia():
     g1 = Guia('Pedro',34, 1.77, 'N', ['inglés','Francés'])
     g2 = Guia('Sara',44, 1.79, 'I', ['Italiano','Alemán'])
+    g3 = Guia('Sara',44, 1.79, 'I', ['Alemán','Italiano','Inglés'])
     print(g1)
     g1.cumple()
     print(g1)
     g1.hablar(g2)
-
+    p1 = Guia('Jose',14, 1.99)
+    L = [g1,p1,g2]
+    L.sort(reverse=True)
+    print(L)
+    print('g1==g2', g1==g2)
+    print('g2==g3', g2==g3)
 
 def testPersona():
     print("Num personas: ", Persona.contador)
