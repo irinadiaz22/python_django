@@ -14,6 +14,12 @@ self el objeto en curso
 
 Constructor de la clase: __init__(self,...)
 
+#### Sobrecarga de funciones especiales y operadores:
+__str__()  --> str()
+__del__()  --> del()
+__len__()  --> len()
+__repr__()  --> repr()
+
 
 
 
