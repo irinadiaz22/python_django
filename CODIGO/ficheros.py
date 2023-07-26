@@ -17,5 +17,5 @@ c2 = leerFichero("ficheros/fichero2.csv")
 print(c2)
 
 print("Coincidencias: ", c & c2)
-print('lineas del fichero1 que no están en fichero2: ')
+print('lineas del fichero1 que no están en fichero2: ', c-c2)
 
