@@ -2,6 +2,9 @@
 Funciones en python
 """
 
+def funcion():
+    pass
+
 def sumar(a,b):
     """
     Suma los dos parámetros que recibe

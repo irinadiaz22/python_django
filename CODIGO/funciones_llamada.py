@@ -20,3 +20,14 @@ print(sumar(*t))
 d = {"a":1, "b":2}
 print(sumar(**d))
 
+L = [(2,4),(4,5),(1,2),(8,8),(9,9)]
+L2 = []
+for a,b in L:
+    L2.append(sumar(a,b))
+print(L2)
+
+L3 = []
+for t in L:
+    L3.append(sumar(*t))
+print(L3)
+
