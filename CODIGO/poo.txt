@@ -20,6 +20,30 @@ __del__()  --> del()
 __len__()  --> len()
 __repr__()  --> repr()
 
+#####################################################################################
+
+Relaciones entre clases:
+herencia: Cuando tengamos clases que comparten información.
+empleado
+	jefe de proyecto
+	administrativo
+	analista
+
+composición: Cuando un objeto complejo se desglosa en partes que objetos de otras clases
+Coche
+	Motor: potencia, tipo de combus.
+	Chasis
+	Ruedas
+Clases que tienen att. que pertenecen a otras clases
+
+asociación:
+coche
+surtidorGaso.
+coche.repostar(surtidor)
+
+#####################################################################################
+sobrecarga de operadores: Relacionales y Aritméticos
+
 
 
 
