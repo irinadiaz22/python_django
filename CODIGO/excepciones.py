@@ -49,5 +49,19 @@ def test4():
         print(L)
     except Exception as e:
         print("ERROR",e.__class__.__name__, e)
-       
-test4()
+
+def test5():
+    # Abrir un fichero, leerlo y liberar recursos (cerrar el fichero)
+    # Si el fichero NO existe no lo intenta cerrar
+    # Si el fichero existe lo cierra en finally.
+    f=None
+    try:
+        f = open('ficheros/fichero1.csv')
+        txt = f.read()
+        return txt               
+    except Exception as e:
+        print('Error: ', e)
+    finally:
+        if f!=None: f.close()
+
+print(test5())
