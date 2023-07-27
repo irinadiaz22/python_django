@@ -64,4 +64,16 @@ def test5():
     finally:
         if f!=None: f.close()
 
-print(test5())
+def test6(n):
+    # Lanzar una excepción:
+    if not (10 <= n <= 20):
+        raise ValueError(f'{n} no se encuentra entre 10 y 20')
+    else:
+        print('Valor correcto: ', n)
+
+if __name__ == '__main__':
+    try:
+        print(__name__)
+        test6(-12)
+    except Exception as e:
+        print('ERROR: ' , e)
