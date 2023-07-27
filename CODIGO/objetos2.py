@@ -42,6 +42,20 @@ class FechaHora(Hora, Fecha):
 
     def __str__(self):
         return Fecha.__str__(self) + " " + Hora.__str__(self)
+
+class FechaHora2:
+    """Una solución por composición"""
+
+    def __init__(self, f=Fecha(1,1,1970), h=Hora(0,0)):
+        self.fecha = f
+        self.hora = h
+
+    @staticmethod
+    def create(dd=1, mm=1, yy=1970, h=0, m=0):
+        return FechaHora2(Fecha(dd,mm,yy), Hora(h,m))
+
+    def __str__(self):
+        return str(self.fecha) + " " + str(self.hora)
     
 h1 = Hora(16,15)
 print(h1)
@@ -53,5 +67,9 @@ hoy = Fecha(27,7,2023)
 print(hoy)
 ahora = FechaHora(27,7,2023,17,2)
 print(ahora)
+ahora2 = FechaHora2()
+print(ahora2)
+ahora3 = FechaHora2.create(h=12,m=30)
+print(ahora3)
 
     
