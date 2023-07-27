@@ -1,6 +1,9 @@
 """
 Implementación de una clase Hora con el operador +
 """
+from modulos.fecha import Fecha
+from modulos.hora import Hora
+from modulos.fechahora import FechaHora
 
 if __name__=='__main__':
     h1 = Hora(16,15)

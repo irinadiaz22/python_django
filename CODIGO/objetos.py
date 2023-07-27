@@ -95,14 +95,21 @@ class Guia(Persona):
 def testGuia():
     g1 = Guia('Pedro',34, 1.77, 'N', ['inglés','Francés'])
     g2 = Guia('Sara',44, 1.79, 'I', ['Italiano','Alemán'])
-    g3 = Guia('Sara',44, 1.79, 'I', ['Alemán','Italiano','Inglés'])
+    g3 = Guia('Sara',44, 1.49, 'I', ['Alemán','Italiano','Inglés'])
     print(g1)
     g1.cumple()
     print(g1)
     g1.hablar(g2)
     p1 = Guia('Jose',14, 1.99)
     L = [g1,p1,g2]
+    # Ordenación por defecto: operador < con la edad
     L.sort(reverse=True)
+    print(L)
+    # Ordenar ASC por la altura:
+    L.sort(key=lambda obj : obj.altura)
+    print(L)
+    # Ordenar DESC por el nombre:
+    L.sort(key=lambda obj : obj.nombre, reverse=True)
     print(L)
     print('g1==g2', g1==g2)
     print('g2==g3', g2==g3)
@@ -120,8 +127,6 @@ def testPersona():
         print('iguales')
     else:
         print('distintos')
-
-    exit()
 
     print("Num personas: ", Persona.contador)
     L = [p1, p2, Persona("Jorge", 33, 1.8)]
@@ -157,4 +162,4 @@ def testPersona():
     print(p1.nombre)
     """
 
-testPersona()
+testGuia()
