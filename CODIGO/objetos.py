@@ -26,12 +26,32 @@ class Persona():
     def __lt__(self, otro):
         return self.edad < otro.edad
     
-    def __eq__(self, otro):
+    def __eq2__(self, otro):
         return self.nombre == otro.nombre and \
         self.edad == otro.edad and self.altura == otro.altura
 
+    def __eq__(self, otro):
+        if type(self) != type(otro):
+            return False
+        else:
+            L1 = list(self.__dict__.values())
+            L2 = list(otro.__dict__.values())
+            return L1 == L2
+
+    def __eq3__(self, otro):
+        if type(self) != type(otro):
+            return False
+        else:
+            self_dict = vars(self) # self.__dict__
+            otro_dict = vars(otro)
+            for k in self_dict:
+                if self_dict[k] != otro_dict[k]:
+                   return False
+            return True
+
     def __str__(self):
-        return self.nombre + " " + str(self.edad) + " " + str(self.altura)
+        return " ".join([str(i) for i in self.__dict__.values()])
+        #return self.nombre + " " + str(self.edad) + " " + str(self.altura)
     
     def __repr__(self):
         return str(self)
@@ -90,8 +110,19 @@ def testGuia():
 def testPersona():
     print("Num personas: ", Persona.contador)
     p1 = Persona("Eva",45, 1.8)
-    p2 = Persona("Sandra",25, 1.7)
+    p2 = Persona("Eva",45, 1.8)
     p3 = Persona("Jose",25, 1.7)
+
+    print('p1', p1)
+    print('p2', p2)
+
+    if p1 == p2:
+        print('iguales')
+    else:
+        print('distintos')
+
+    exit()
+
     print("Num personas: ", Persona.contador)
     L = [p1, p2, Persona("Jorge", 33, 1.8)]
     print("Num personas: ", Persona.contador)
@@ -126,4 +157,4 @@ def testPersona():
     print(p1.nombre)
     """
 
-testGuia()
+testPersona()
